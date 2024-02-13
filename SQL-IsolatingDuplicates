@@ -1,0 +1,15 @@
+*Brief SQL query which isolates dupes in a given table (in this case, 'customer' table)
+
+SELECT customer_id,
+  store_id,
+  first_name,
+  last_name,
+  email,
+  COUNT (*)
+FROM customer
+GROUP BY customer_id,
+  store_id,
+  first_name,
+  last_name,
+  email
+HAVING COUNT (*) >1
